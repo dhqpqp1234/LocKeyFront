@@ -1,31 +1,54 @@
 import React, { useState } from "react";
 import { getIconImages } from "../../../js/icon/icon";
+import Tap from "./Tap";
 import "../../../css/Header.css";
 
 const Header = () => {
+  // 메뉴 표시 여부 상태
+  const [isMenuVisible, setIsMenuVisible] = useState(false);
+
+  const otherMenuOnClick = () => {
+    // 메뉴 토글
+    setIsMenuVisible(!isMenuVisible);
+  };
+
   return (
-    <>
-      <header className="header">
-        <div className="headerIcon">
+    <header className="header">
+      <div className="headerIcon">
+        <img
+          style={{
+            width: "50px",
+            height: "50px",
+            backgroundColor: "skyblue",
+          }}
+          src={getIconImages(1)}
+          alt="icon"
+        />
+        <div className="headerMenu">
+          <Tap className="headerTapDiv" tapNo={0} />
+          <Tap className="headerTapDiv" tapNo={1} />
+          <Tap className="headerTapDiv" tapNo={2} />
+          <Tap className="headerTapDiv" tapNo={3} />
+          <Tap className="headerTapDiv" tapNo={4} />
+
+          {/* 더보기 아이콘 */}
           <img
-            style={{
-              width: "50px",
-              height: "50px",
-              backgroundColor: "skyblue",
-            }}
-            src={getIconImages(1)}
+            id="mainOtherTap"
+            onClick={otherMenuOnClick}
+            style={{ marginLeft: "200px", cursor: "pointer" }}
+            src={getIconImages(0)}
+            alt="더보기"
           />
-          <div className="headerMenu">
-            <div className="headerTapDiv">tap1</div>
-            <div className="headerTapDiv">tap2</div>
-            <div className="headerTapDiv">tap3</div>
-            <div className="headerTapDiv">tap4</div>
-            <div className="headerTapDiv">tap5</div>
-            <img style={{ marginLeft: "200px" }} src={getIconImages(0)} />
+
+          {/* 메뉴가 보일 때만 아래 항목들이 표시됨 */}
+          <div className={`additionalMenu ${isMenuVisible ? "show" : ""}`}>
+            <div className="menuItem">추가 메뉴 1</div>
+            <div className="menuItem">추가 메뉴 2</div>
+            <div className="menuItem">추가 메뉴 3</div>
           </div>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 
