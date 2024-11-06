@@ -16,7 +16,11 @@ const MainTop = () => {
         <Swiper spaceBetween={50} slidesPerView={3}>
           {imageIds.map((imageId, index) => (
             <SwiperSlide key={index}>
-              <img src={getIconImages(imageId)} alt={`Slide ${index + 1}`} />
+              <img
+                style={{ width: "474px", height: "474px" }}
+                src={getIconImages(imageId)}
+                alt={`Slide ${index + 1}`}
+              />
             </SwiperSlide>
           ))}
         </Swiper>

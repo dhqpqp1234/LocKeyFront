@@ -1,0 +1,24 @@
+.footer {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    align-items: center;    /* 가운데 정렬 */
+    padding: 20px;          /* 여백 */
+    background-color: #f4f4f4; /* 배경색 */
+    font-size: 14px;        /* 폰트 크기 */
+    color: #333;            /* 글자 색 */
+  }
+  
+  .footer-links,
+  .footer-info {
+    display: flex;
+    justify-content: center;  /* 항목을 수평으로 정렬 */
+    gap: 15px;                /* 항목들 간의 간격 */
+    margin-bottom: 10px;      /* 항목 간의 여백 */
+  }
+  
+  .footer-copyright p {
+    margin: 0;
+    font-size: 12px; /* 저작권 텍스트는 더 작은 크기로 */
+    text-align: center; /* 중앙 정렬 */
+  }
+  
