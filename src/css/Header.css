@@ -1,0 +1,37 @@
+.header{
+    display: flex;
+    align-items: center;
+    padding: 20px 0px;
+    border-bottom: 1px solid rgb(226, 226, 226);
+}
+
+.headerIcon {
+    display: flex;
+    align-items: center;  /* 세로 정렬 (필요에 따라 수정) */
+    justify-content: space-between; /* 가로 정렬 (필요에 따라 수정) */
+    width: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+  
+  .headerMenu{
+    display: flex;
+    gap: 120px;
+    align-items: center;
+  }
+
+  .headerIcon img {
+    margin: 0 10px; /* 이미지 간 간격 */
+  }
+  
+  .headerIcon div {
+    margin: 0 10px; /* 텍스트 간 간격 */
+  }
+
+  .headerTapDiv{
+    display: flex;
+    gap: 30px;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  

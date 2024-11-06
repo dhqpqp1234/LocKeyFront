@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'NanumPenScript';
+    src: url('/NanumPenScript-Regular.ttf');
+}
+html, body{
+    margin: 0px;
+    width: 100%;
+    /*background-color: rgb(246, 246, 246);*/
+}
+body * {
+    font-family: 'NanumPenScript';
+}
