@@ -1,0 +1,191 @@
+/* 전체 컨테이너 스타일 */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5; /* 밝은 회색 배경 */
+}
+
+/* 회원가입 박스 스타일 */
+.signUpMain {
+  background-color: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+}
+
+/* 제목 스타일 */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 입력 필드 스타일 */
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #333;
+  background-color: #fafafa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #0071eb;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 113, 235, 0.3);
+}
+
+.input::placeholder {
+  color: #aaa;
+  font-style: italic;
+}
+
+/* 전화번호 인증 버튼 */
+.verifyButton {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #4caf50; /* 녹색 */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.verifyButton:disabled {
+  background-color: #ccc; /* 인증 완료 후 비활성화 */
+  cursor: not-allowed;
+}
+
+.verifyButton:hover:not(:disabled) {
+  background-color: #45a049; /* hover 시 색상 변화 */
+}
+
+/* 인증번호 입력 박스 */
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.inputContainer .input {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+/* 가입하기 버튼 */
+.submitButton {
+  
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(135deg, #ff5f6d, #ffc3a0);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-align: center;
+}
+
+.submitButton:hover {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  transform: scale(1.05);
+}
+
+.submitButton:active {
+  background: linear-gradient(135deg, #ff4b2b, #ff5f6d);
+  transform: scale(0.98);
+}
+
+/* 인증하기 버튼 */
+.smsSubmitButton {
+  margin-top: -14px;
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 16px;
+  color: white;
+  background: linear-gradient(135deg, #ff5f6d, #ffc3a0);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-align: center;
+}
+
+.smsSubmitButton:hover {
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  transform: scale(1.05);
+}
+
+.smsSubmitButton:active {
+  background: linear-gradient(135deg, #ff4b2b, #ff5f6d);
+  transform: scale(0.98);
+}
+
+/* 소셜 로그인 버튼 스타일 */
+.socialLoginContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.socialButtonF,
+.socialButtonG {
+  padding: 12px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.socialButtonF {
+  background-color: #3b5998; /* Facebook */
+}
+
+.socialButtonG {
+  background-color: #db4437; /* Google */
+}
+
+.socialButtonF:hover {
+  background-color: #2d4373;
+}
+
+.socialButtonG:hover {
+  background-color: #c1351d;
+}
+
+/* 로그인 유도 텍스트 */
+.signInPrompt {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.signInLink {
+  color: #0071eb;
+  text-decoration: none;
+}
+
+.signInLink:hover {
+  text-decoration: underline;
+}

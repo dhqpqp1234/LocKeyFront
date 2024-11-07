@@ -7,7 +7,7 @@ const MainBottom = () => {
     <div className="mainBottom">
       <div className="mainBottomText">{text}</div>
       <div className="mainButton">
-        <Button btnNo={0} /> <Button btnNo={1} />
+        <Button btnNo={1} /> <Button btnNo={2} />
       </div>
     </div>
   );

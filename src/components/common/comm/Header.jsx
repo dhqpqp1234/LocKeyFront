@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { getIconImages } from "../../../js/icon/icon";
 import Tap from "./Tap";
+import Button from "../button/Button";
 import "../../../css/Header.css";
 
 const Header = () => {
@@ -15,7 +16,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="headerIcon">
-        <img
+        {/* <img
           style={{
             width: "50px",
             height: "50px",
@@ -23,6 +24,11 @@ const Header = () => {
           }}
           src={getIconImages(1)}
           alt="icon"
+        /> */}
+        <img
+          className="logo"
+          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
+          alt="Netflix"
         />
         <div className="headerMenu">
           <Tap className="headerTapDiv" tapNo={0} />
@@ -30,12 +36,12 @@ const Header = () => {
           <Tap className="headerTapDiv" tapNo={2} />
           <Tap className="headerTapDiv" tapNo={3} />
           <Tap className="headerTapDiv" tapNo={4} />
-
+          <Button btnNo={3} />
           {/* 더보기 아이콘 */}
           <img
             id="mainOtherTap"
             onClick={otherMenuOnClick}
-            style={{ marginLeft: "200px", cursor: "pointer" }}
+            style={{ cursor: "pointer" }}
             src={getIconImages(0)}
             alt="더보기"
           />

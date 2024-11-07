@@ -11,7 +11,7 @@ export function getIconImages(num){
         //메인사진
         case 2 : return mainImage;
         case 3 : return moonImage;
-        case 4 : return moveMoonImage;   
+        case 4 : return moveMoonImage;
         default : null;
     }    
 }
