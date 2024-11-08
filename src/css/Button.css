@@ -6,6 +6,7 @@
     font-weight: bold;
     border-radius: 5px;
     background-color: white;
+    cursor: pointer;
 }
 
 .button3,.button4{
@@ -16,6 +17,7 @@
     border-radius: 5px;
     background-color: white;
     border: none;
+    cursor: pointer;
 }
 
 .mainButton{
@@ -24,4 +26,5 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 50px;
+    cursor: pointer;
 }

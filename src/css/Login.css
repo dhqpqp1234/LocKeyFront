@@ -1,7 +1,6 @@
 /* 배경 이미지와 전체 레이아웃 */
 .container {
     background-size: cover;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
