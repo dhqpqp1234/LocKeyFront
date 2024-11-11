@@ -3,6 +3,7 @@ import mainRogo from '../../assets/main_rogo.png'
 import mainImage from '../../assets/main.gif'
 import moonImage from '../../assets/moon.gif'
 import moveMoonImage from '../../assets/move_moon.gif'
+import kakaoImage from '../../assets/kakaoTalk_logo.svg'
 
 export function getIconImages(num){
     switch(num){
@@ -12,6 +13,7 @@ export function getIconImages(num){
         case 2 : return mainImage;
         case 3 : return moonImage;
         case 4 : return moveMoonImage;
+        case 5 : return kakaoImage;
         default : null;
     }    
 }

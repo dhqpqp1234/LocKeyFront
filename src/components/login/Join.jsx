@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { filterPhone } from "../../js/regex/regex";
 import { filterNullCheckMsg } from "../../js/msg/msg";
 import "../../css/Join.css"; // CSS 파일을 임포트
-import { MdSignLanguage } from "react-icons/md";
 
 const SignUp = () => {
   const [inputState, setInputState] = useState("");

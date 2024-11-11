@@ -28,3 +28,99 @@
     padding-bottom: 50px;
     cursor: pointer;
 }
+
+
+/* 로그인 버튼의 기본 스타일 */
+.socialLoginContainer {
+    margin-top: 20px;
+  }
+  
+  .socialButtonF,
+  .socialButtonG,
+  .socialButtonK {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .socialButtonF {
+    background-color: #1877f2;
+    color: white;
+  }
+  
+  .socialButtonF:hover {
+    background-color: #145dbf;
+  }
+  
+  .socialButtonG {
+    background-color: #4285f4;
+    color: white;
+  }
+  
+  .socialButtonG:hover {
+    background-color: #3367d6;
+  }
+  
+  .socialButtonK {
+    background-color: #f7e600;
+    color: black;
+    font-weight: normal;
+  }
+  
+  .socialButtonK:hover {
+    background-color: #d8b800;
+  }
+  
+  .socialButtonK img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  
+  /* 기본 버튼 스타일 */
+  .submitButton {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #f40612;
+  }
+  
+  .forgotPassword {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #0071eb;
+    font-size: 14px;
+  }
+  
+  .forgotPassword:hover {
+    text-decoration: underline;
+  }
+  
+  .loginFooter {
+    text-align: center;
+    margin-top: 40px;
+    color: #999;
+    font-size: 14px;
+  }
+  
