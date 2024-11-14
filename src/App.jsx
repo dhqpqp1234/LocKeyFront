@@ -10,7 +10,7 @@ import { useAxios } from "./js/axios/axios.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  useAxios("http://localhost:8080/test");
+  // useAxios("http://localhost:8080/test");
   return (
     <>
       <BrowserRouter>

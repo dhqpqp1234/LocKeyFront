@@ -4,6 +4,7 @@ import mainImage from '../../assets/main.gif'
 import moonImage from '../../assets/moon.gif'
 import moveMoonImage from '../../assets/move_moon.gif'
 import kakaoImage from '../../assets/kakaoTalk_logo.svg'
+import naverImage from '../../assets/naverLogo.jpeg'
 
 export function getIconImages(num){
     switch(num){
@@ -14,6 +15,7 @@ export function getIconImages(num){
         case 3 : return moonImage;
         case 4 : return moveMoonImage;
         case 5 : return kakaoImage;
+        case 6 : return naverImage;
         default : null;
     }    
 }
