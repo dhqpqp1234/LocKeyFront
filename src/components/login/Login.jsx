@@ -8,7 +8,6 @@ import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
-  const [naverCode, setNaverCode] = useState(null);
 
   const REST_API_KEY = import.meta.env.VITE_KAKAO_REST_API_KEY;
   const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI_V1;
@@ -79,6 +78,10 @@ const Login = () => {
     window.location.href = naverURL;
   };
 
+  const googleLogin = () => {
+    alert("기다려 아직이야");
+  };
+
   return (
     <div className="container">
       <div className="loginMain">
@@ -88,7 +91,11 @@ const Login = () => {
           <input className="input" placeholder="비밀번호" type="password" />
           <button className="submitButton">로그인</button>
           <div className="socialLoginContainer">
-            <button type="button" className="socialButtonG">
+            <button
+              type="button"
+              className="socialButtonG"
+              onClick={googleLogin}
+            >
               <FaGoogle style={{ marginRight: "10px" }} /> Google로 로그인
             </button>
             <button
