@@ -38,10 +38,22 @@ const SignUp = () => {
       alert("이메일형식으로 입력해주세요.");
       return;
     }
+
+    const idCheckData = {
+      id: email,
+    };
+
     axios
-      .post("http://localhost:8080/member/getInfo", email)
+      .post("http://localhost:8080/member/getInfo", idCheckData)
       .then((response) => {
-        console.log(response);
+        const data = response.data.id;
+        if (data !== "") {
+          alert("사용중인 아이디입니다.");
+          return;
+        } else {
+          setEmailStat(true);
+          alert("사용가능한 아이디입니다.");
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -57,6 +69,11 @@ const SignUp = () => {
 
     if (!pwCheck) {
       alert("비밀번호를 확인해주세요.");
+      return;
+    }
+
+    if (!emailState) {
+      alert("중복된 아이디입니다.");
       return;
     }
 
