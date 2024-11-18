@@ -250,13 +250,25 @@ const SignUp = () => {
             인증 확인
           </button>
         </div>
-        <input
+        <div className="inputContainer">
+          <input
+            className="input"
+            id="addr"
+            placeholder="주소"
+            type="text"
+            readOnly
+          />
+          <button type="button" className="smsSubmitButton">
+            주소검색
+          </button>
+        </div>
+        {/* <input
           className="input"
           placeholder="집 주소"
           id="addr"
           type="text"
           required
-        />
+        /> */}
         <button onClick={signUpOnClick} className="submitButton">
           가입하기
         </button>
