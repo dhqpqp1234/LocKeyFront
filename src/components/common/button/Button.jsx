@@ -29,6 +29,8 @@ const Button = ({ btnNo }) => {
         setbuttonState("로그아웃");
         buttonRef.current = 4;
         break;
+      case 5:
+        break;
       default:
         setbuttonState("버튼");
         break;

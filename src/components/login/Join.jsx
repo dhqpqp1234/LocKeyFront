@@ -6,6 +6,7 @@ import { filterPhone } from "../../js/regex/regex";
 import { filterNullCheckMsg } from "../../js/msg/msg";
 import "../../css/Join.css"; // CSS 파일을 임포트
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [inputState, setInputState] = useState("");
@@ -30,12 +31,18 @@ const SignUp = () => {
       /^[a-zA-Z0-9]([-_.]?[a-zA-Z0-9])*@[a-zA-Z0-9]([-_.]?[a-zA-Z0-9])*\.[a-zA-Z]{2,}$/i;
 
     if (email === "") {
-      alert("이메일을 입력해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "이메일을 입력해주세요.",
+      });
       return;
     }
 
     if (!regExp.test(email)) {
-      alert("이메일형식으로 입력해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "이메일형식으로 입력해주세요.",
+      });
       return;
     }
 
@@ -47,12 +54,18 @@ const SignUp = () => {
       .post("http://localhost:8080/member/getInfo", idCheckData)
       .then((response) => {
         const data = response.data.id;
-        if (data !== "") {
-          alert("사용중인 아이디입니다.");
+        if (data !== undefined) {
+          Swal.fire({
+            icon: "error",
+            title: "사용중인 아이디입니다.",
+          });
           return;
         } else {
           setEmailStat(true);
-          alert("사용가능한 아이디입니다.");
+          Swal.fire({
+            icon: "success",
+            title: "사용가능한 아이디입니다.",
+          });
         }
       })
       .catch((error) => {
@@ -63,17 +76,26 @@ const SignUp = () => {
   //등록
   const signUpOnClick = () => {
     if (!smsCheck) {
-      alert("인증번호를 확인해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "인증번호를 확인해주세요.",
+      });
       return;
     }
 
     if (!pwCheck) {
-      alert("비밀번호를 확인해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "비밀번호를 확인해주세요.",
+      });
       return;
     }
 
     if (!emailState) {
-      alert("중복된 아이디입니다.");
+      Swal.fire({
+        icon: "error",
+        title: "중복된 아이디입니다.",
+      });
       return;
     }
 
@@ -82,7 +104,10 @@ const SignUp = () => {
 
     const isAnyEmpty = Array.from(input).some((item) => {
       if (item.value === "") {
-        alert(filterNullCheckMsg(item.id));
+        Swal.fire({
+          icon: "error",
+          title: filterNullCheckMsg(item.id),
+        });
         item.focus();
         return true;
       }
@@ -108,7 +133,10 @@ const SignUp = () => {
       .post("http://localhost:8080/member/register", data)
       .then((response) => {
         if (response.data.status === "SUCCESS") {
-          alert("가입이 완료되었습니다.");
+          Swal.fire({
+            icon: "success",
+            title: "가입이 완료되었습니다.",
+          });
           navigate("/signUpComp");
         }
       })
@@ -120,16 +148,25 @@ const SignUp = () => {
   const smsRequestOnclick = () => {
     const phoneNumber = document.getElementById("ph1").value;
     if (phoneNumber === "") {
-      alert("전화번호를 입력해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "전화번호를 입력해주세요.",
+      });
       return;
     }
     if (phoneNumber.length < 13) {
-      alert("전화번호 자리수를 확인해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "전화번호 자리수를 확인해주세요.",
+      });
       return;
     }
     const randomSmsNumber = 456128; //현질해야 해준데.. 임시로 걍 넣었어 시블
     setMsgState(randomSmsNumber);
-    alert("인증번호가 요청되었습니다.");
+    Swal.fire({
+      icon: "info",
+      title: "인증번호가 요청되었습니다.",
+    });
     // axios
     //   .post("http://localhost:8080/sms/send", {
     //     ph: phoneNumber,
@@ -146,14 +183,23 @@ const SignUp = () => {
   const smsNumberCheck = () => {
     const smsCheckInput = Number(document.getElementById("ph2").value);
     if (smsCheckInput === "") {
-      alert("인증번호를 입력해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "인증번호를 입력해주세요.",
+      });
       return;
     }
     if (msgState !== smsCheckInput) {
-      alert("인증번호를 확인해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "인증번호를 확인해주세요.",
+      });
       return;
     } else {
-      alert("확인되었습니다.");
+      Swal.fire({
+        icon: "success",
+        title: "확인되었습니다.",
+      });
       setSmsCheck(true);
     }
   };
@@ -163,20 +209,29 @@ const SignUp = () => {
     const pw2 = document.getElementById("pw2").value;
 
     if (pw1 === "" || pw2 === "") {
-      alert("비밀번호를 입력해주세요.");
+      Swal.fire({
+        icon: "error",
+        title: "비밀번호를 입력해주세요.",
+      });
       return;
     }
 
     if (pw1 !== pw2) {
-      alert("비밀번호를 확인해주세요");
+      Swal.fire({
+        icon: "error",
+        title: "비밀번호를 확인해주세요.",
+      });
       return;
     } else {
-      alert("비밀번호가 일치합니다.");
+      Swal.fire({
+        icon: "success",
+        title: "비밀번호가 일치합니다.",
+      });
       setPwCheck(true);
     }
   };
   return (
-    <div className="container">
+    <div className="containerJ">
       <div className="signUpMain">
         <h1 className="title">회원가입</h1>
         <div className="inputContainer">
@@ -250,7 +305,7 @@ const SignUp = () => {
             인증 확인
           </button>
         </div>
-        <div className="inputContainer">
+        {/* <div className="inputContainer">
           <input
             className="input"
             id="addr"
@@ -261,18 +316,18 @@ const SignUp = () => {
           <button type="button" className="smsSubmitButton">
             주소검색
           </button>
-        </div>
-        {/* <input
+        </div> */}
+        <input
           className="input"
           placeholder="집 주소"
           id="addr"
           type="text"
           required
-        /> */}
+        />
         <button onClick={signUpOnClick} className="submitButton">
           가입하기
         </button>
-        <div className="socialLoginContainer">
+        <div className="socialLoginContainerJ">
           <button className="socialButtonF">
             <FaFacebook style={{ marginRight: "10px" }} /> Facebook으로 가입
           </button>

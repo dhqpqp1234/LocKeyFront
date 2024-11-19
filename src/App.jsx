@@ -6,11 +6,9 @@ import Login from "./components/login/Login";
 import Join from "./components/login/Join";
 import SignUpComplete from "./components/login/SignUpComplete";
 import "./css/App.css";
-import { useAxios } from "./js/axios/axios.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  // useAxios("http://localhost:8080/test");
   return (
     <>
       <BrowserRouter>

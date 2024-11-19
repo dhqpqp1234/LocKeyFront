@@ -1,14 +1,13 @@
 import React from "react";
 import "../../css/Login.css"; // 스타일 파일을 import 합니다.
-import { FaGoogle } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { getIconImages } from "../../js/icon/icon";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
-
   const REST_API_KEY = import.meta.env.VITE_KAKAO_REST_API_KEY;
   const REDIRECT_URI = import.meta.env.VITE_KAKAO_REDIRECT_URI_V1;
   const kakaoURL = `https://kauth.kakao.com/oauth/authorize?client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}&response_type=code&prompt=login`;
@@ -33,13 +32,19 @@ const Login = () => {
               localStorage.setItem("kakao_access_token", data.access_token);
               navigate(`/login?status=OK&userId=${data.userId}`);
             } else {
-              alert("등록된 회원이 아닙니다.");
+              Swal.fire({
+                icon: "error",
+                title: "등록된 회원이 아닙니다.",
+              });
               navigate("/signUp");
             }
           })
           .catch((error) => {
             console.error("로그인 중 오류 발생:", error);
-            alert("로그인 중 오류가 발생했습니다.");
+            Swal.fire({
+              icon: "error",
+              title: "로그인 중 오류가 발생했습니다.",
+            });
           });
       }
     } else if (flatFormType === "N") {
@@ -56,13 +61,19 @@ const Login = () => {
               localStorage.setItem("naver_access_token", data.access_token);
               navigate(`/login?status=OK&userId=${data.userId}`);
             } else {
-              alert("등록된 회원이 아닙니다.");
+              Swal.fire({
+                icon: "error",
+                title: "등록된 회원이 아닙니다.",
+              });
               navigate("/signUp");
             }
           })
           .catch((error) => {
             console.error(error);
-            alert("로그인 중 오류가 발생했습니다.");
+            Swal.fire({
+              icon: "error",
+              title: "로그인 중 오류가 발생했습니다.",
+            });
           });
       }
     }
@@ -79,18 +90,80 @@ const Login = () => {
   };
 
   const googleLogin = () => {
-    alert("기다려 아직이야");
+    Swal.fire({
+      icon: "error",
+      title: "구글미구현",
+    });
+  };
+  //홈페이지 로그인
+  const homeLoginClick = () => {
+    const id = document.getElementById("id").value;
+    const pw = document.getElementById("pw").value;
+
+    if (id === "") {
+      Swal.fire({
+        icon: "error",
+        title: "아이디를 입력해주세요.",
+      });
+      return;
+    }
+    if (pw === "") {
+      Swal.fire({
+        icon: "error",
+        title: "비밀번호를 입력해주세요.",
+      });
+      return;
+    }
+    //request
+    axios
+      .post(
+        "http://localhost:8080/member/signIn",
+        {
+          id: id,
+          pw: pw,
+        },
+        { withCredentials: true }
+      )
+      .then((response) => {
+        if (response.data.status === "SUCCESS") {
+          sessionStorage.setItem(
+            "memb_no",
+            JSON.stringify(response.data.userInfo.memb_no)
+          );
+          navigate("/");
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "계정을 확인해주세요.",
+          });
+          return;
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
     <div className="container">
       <div className="loginMain">
         <h1 className="loginTitle">로그인</h1>
-        <form className="form">
-          <input className="input" placeholder="이메일 주소" type="email" />
-          <input className="input" placeholder="비밀번호" type="password" />
-          <button className="submitButton">로그인</button>
-          <div className="socialLoginContainer">
+        <input
+          className="input"
+          id="id"
+          placeholder="이메일 주소"
+          type="email"
+        />
+        <input
+          className="input"
+          id="pw"
+          placeholder="비밀번호"
+          type="password"
+        />
+        <button type="button" className="submitButton" onClick={homeLoginClick}>
+          로그인
+        </button>
+        {/* <div className="socialLoginContainer">
             <button
               type="button"
               className="socialButtonG"
@@ -114,13 +187,25 @@ const Login = () => {
               <img src={getIconImages(6)} />
               네이버 로그인
             </button>
-          </div>
-          <a className="forgotPassword" href="#forgot-password">
-            비밀번호를 잊으셨나요?
-          </a>
-        </form>
+          </div> */}
+        <div className="socialLoginContainer">
+          <span className="line"></span>
+          <span id="snsLoginTxt">SNS계정으로 로그인</span>
+          <span className="line"></span>
+        </div>
+        <div id="socialLoginButton">
+          <button type="button" className="socialButtons" onClick={kakaoLogin}>
+            <img src={getIconImages(5)} />
+          </button>
+          <button type="button" className="socialButtons" onClick={naverLogin}>
+            <img src={getIconImages(6)} />
+          </button>
+          <button type="button" className="socialButtons" onClick={googleLogin}>
+            <img src={getIconImages(7)} />
+          </button>
+        </div>
+        <a className="forgotPassword">비밀번호를 잊으셨나요?</a>
       </div>
-
       <footer className="loginFooter">
         <p>
           넷플릭스를 처음 사용하시나요?{" "}
