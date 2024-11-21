@@ -1,0 +1,76 @@
+/* Modal.css */
+
+/* 전체 모달 배경 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* 반투명 검정 배경 */
+  z-index: 999; /* 모달이 캘린더 위로 오게 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 모달 창 */
+.modal-content {
+  background-color: #fff; /* 모달 배경색 */
+  padding: 30px;
+  border-radius: 10px;
+  width: 500px;
+  max-width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 부드러운 그림자 */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 모달 제목 */
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 폼 입력 영역 */
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* 텍스트 입력 필드 */
+.input-field,
+.textarea-field,
+.file-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* 텍스트영역 */
+.textarea-field {
+  height: 100px;
+}
+
+/* 버튼 스타일 */
+.close-btn {
+  background-color: #8c5bff; /* 버튼 배경색 */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+}
+
+.close-btn:hover {
+  background-color: #7b4de0; /* 버튼 호버 효과 */
+}

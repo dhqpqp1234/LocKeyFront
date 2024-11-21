@@ -163,31 +163,6 @@ const Login = () => {
         <button type="button" className="submitButton" onClick={homeLoginClick}>
           로그인
         </button>
-        {/* <div className="socialLoginContainer">
-            <button
-              type="button"
-              className="socialButtonG"
-              onClick={googleLogin}
-            >
-              <FaGoogle style={{ marginRight: "10px" }} /> Google로 로그인
-            </button>
-            <button
-              type="button"
-              className="socialButtonK"
-              onClick={kakaoLogin}
-            >
-              <img src={getIconImages(5)} />
-              Kakao 로그인
-            </button>
-            <button
-              type="button"
-              className="socialButtonN"
-              onClick={naverLogin}
-            >
-              <img src={getIconImages(6)} />
-              네이버 로그인
-            </button>
-          </div> */}
         <div className="socialLoginContainer">
           <span className="line"></span>
           <span id="snsLoginTxt">SNS계정으로 로그인</span>
@@ -208,12 +183,12 @@ const Login = () => {
       </div>
       <footer className="loginFooter">
         <p>
-          넷플릭스를 처음 사용하시나요?{" "}
+          LOCKEY를 처음 사용하시나요?{" "}
           <Link to="/signUp" className="signUp">
             가입하기
           </Link>
         </p>
-        <p>넷플릭스 이용 약관과 개인정보 처리 방침에 동의합니다.</p>
+        <p>LOCKEY 이용 약관과 개인정보 처리 방침에 동의합니다.</p>
       </footer>
     </div>
   );

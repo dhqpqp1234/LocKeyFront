@@ -15,9 +15,10 @@
     font-size: 18px;
     font-weight: bold;
     border-radius: 5px;
-    background-color: white;
+    background-color: #dfb6f5;
     border: none;
     cursor: pointer;
+    color: #fff;
 }
 
 .mainButton{
