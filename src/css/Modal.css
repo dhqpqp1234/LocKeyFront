@@ -32,7 +32,7 @@
 .modal-title {
   font-size: 24px;
   font-weight: bold;
-  color: #333;
+  color: black;
   margin-bottom: 20px;
 }
 
@@ -46,14 +46,13 @@
 .input-field,
 .textarea-field,
 .file-input {
-  width: 100%;
+  width: 96%;
   padding: 10px;
   margin-top: 5px;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid black;
   font-size: 14px;
 }
-
 /* 텍스트영역 */
 .textarea-field {
   height: 100px;
@@ -61,7 +60,7 @@
 
 /* 버튼 스타일 */
 .close-btn {
-  background-color: #8c5bff; /* 버튼 배경색 */
+  background-color: #dfb6f5; /* 버튼 배경색 */
   color: white;
   border: none;
   padding: 10px 20px;
@@ -69,8 +68,85 @@
   cursor: pointer;
   transition: background-color 0.3s;
   font-size: 16px;
+  margin-right : 10px;
 }
 
 .close-btn:hover {
-  background-color: #7b4de0; /* 버튼 호버 효과 */
+  background-color: #dfb6f5; /* 버튼 호버 효과 */
 }
+
+/* 콘텐츠 인풋 */
+#content{
+  border: 1px solid black;
+}
+
+#contentsModal{
+  background-color: #fff;
+}
+
+/* file */
+.file-container {
+  display: flex;
+  align-items: center; /* 수평으로 정렬 */
+  justify-content: space-between; /* 양쪽 끝에 배치 */
+  width: 100%;
+}
+
+.file-list {
+  flex: 1; /* 파일명이 왼쪽에 위치하도록 설정 */
+  padding-right: 20px; /* 버튼과의 간격을 줌 */
+}
+
+.file-item {
+  font-size: 14px;
+  color: #333;
+  width: 409px;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.form-group {
+  display: inline-block; /* 파일 첨부 버튼은 오른쪽에 배치 */
+}
+
+.file-label {
+  display: inline-block;
+  padding: 7px 10px;
+  background-color: #dfb6f5; /* 버튼 배경 색 */
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s ease;
+  width: 100%;  /* 버튼 너비를 100%로 설정 */
+  max-width: 53px; /* 최대 너비 제한 */
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;;
+}
+
+.file-label:hover {
+  background-color: #cf9be7; /* hover 색상 */
+  transform: translateY(-2px); /* 살짝 올라가는 애니메이션 */
+}
+
+.file-label:active {
+  transform: translateY(0); /* 클릭 시 눌린 효과 */
+}
+
+.file-input {
+  display: none; /* 기본 input[type="file"] 숨김 */
+}
+
+.file-label span {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+

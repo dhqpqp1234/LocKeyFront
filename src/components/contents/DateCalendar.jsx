@@ -18,6 +18,10 @@ const DateCalendar = () => {
     setModalState(false);
   };
 
+  const removeDayTxt = (arg) => {
+    return arg.dayNumberText.replaceAll("일", "");
+  };
+
   const dropEvent = (e) => {
     Swal.fire({
       icon: "info",
@@ -50,6 +54,7 @@ const DateCalendar = () => {
           right: "next",
         }}
         eventDrop={dropEvent}
+        dayCellContent={removeDayTxt}
       />
     </div>
   );

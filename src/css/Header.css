@@ -48,6 +48,8 @@
 /* 더보기 버튼 */
 #mainOtherTap {
   transition: transform 0.3s ease;
+  width: 42.63px;
+  height: 23px;
 }
 
 #mainOtherTap:hover {
