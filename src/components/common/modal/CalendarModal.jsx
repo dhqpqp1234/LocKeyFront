@@ -52,7 +52,9 @@ const CalendarModal = ({ isOpen, onClose, thisDate, userCalData }) => {
             title: "수정되었습니다.",
           });
           onClose();
-          window.location.reload();
+          setInterval(() => {
+            window.location.reload();
+          }, 1000);
         }
       })
       .catch((error) => {
@@ -75,7 +77,9 @@ const CalendarModal = ({ isOpen, onClose, thisDate, userCalData }) => {
             title: "삭제되었습니다.",
           });
           onClose();
-          window.location.reload();
+          setInterval(() => {
+            window.location.reload();
+          }, 1000);
         }
       })
       .catch((error) => {
@@ -121,6 +125,9 @@ const CalendarModal = ({ isOpen, onClose, thisDate, userCalData }) => {
             title: "등록이 완료되었습니다.",
           });
           onClose();
+          setInterval(() => {
+            window.location.reload();
+          }, 1000);
         }
       })
       .catch((error) => {
