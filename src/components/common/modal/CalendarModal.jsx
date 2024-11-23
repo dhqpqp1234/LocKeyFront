@@ -1,13 +1,32 @@
 import Modal from "react-modal";
 import "../../../css/Modal.css";
 import Swal from "sweetalert2";
-import { getNowDate } from "../../../js/date/nowDate";
 import { useState, useEffect } from "react";
+import { getNowDate } from "../../../js/date/nowDate";
 import axios from "axios";
 
-const CalendarModal = ({ isOpen, onClose }) => {
+const CalendarModal = ({ isOpen, onClose, thisDate, userCalData }) => {
   const [fileName, setFileName] = useState("");
-  const [nowDate, setNowDate] = useState(getNowDate());
+  const [userTitle, setUserTitle] = useState(
+    userCalData ? userCalData.title : ""
+  );
+  const [userContent, setUserContent] = useState(
+    userCalData ? userCalData.cal_content : ""
+  );
+  const [userThisDate, setUserThisDate] = useState(
+    userCalData ? getNowDate(userCalData.date) : ""
+  );
+
+  const inputChange = (e) => {
+    switch (e.target.id) {
+      case "title":
+        setUserTitle(e.target.value);
+        break;
+      case "content":
+        setUserContent(e.target.value);
+        break;
+    }
+  };
 
   const handleFileChange = (e) => {
     const files = e.target.files;
@@ -15,6 +34,53 @@ const CalendarModal = ({ isOpen, onClose }) => {
       const fileNamesArray = Array.from(files).map((file) => file.name);
       setFileName(fileNamesArray); // 여러 파일의 이름을 상태로 저장
     }
+  };
+
+  const modify = () => {
+    const request = {
+      contents_no: userCalData.contents_no,
+      title: document.getElementById("title").value,
+      cal_content: document.getElementById("content").value,
+    };
+
+    axios
+      .patch("http://localhost:8080/calendar/schd/modify", request)
+      .then((response) => {
+        if (response.status === 200) {
+          Swal.fire({
+            icon: "success",
+            title: "수정되었습니다.",
+          });
+          onClose();
+          window.location.reload();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  const deleteCal = () => {
+    const request = {
+      contents_no: userCalData.contents_no,
+      use_at: "N",
+    };
+
+    axios
+      .patch("http://localhost:8080/calendar/schd/modify", request)
+      .then((response) => {
+        if (response.status === 200) {
+          Swal.fire({
+            icon: "success",
+            title: "삭제되었습니다.",
+          });
+          onClose();
+          window.location.reload();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const register = () => {
@@ -38,14 +104,15 @@ const CalendarModal = ({ isOpen, onClose }) => {
     }
 
     const request = {
+      memb_no: 1, //임시
       title: title,
-      content: content,
-      calendar_date: nowDate,
-      content_type: "C",
+      cal_content: content,
+      calendar_date: thisDate,
+      content_type: "C", //임시
     };
 
     axios
-      .post("http://localhost:8080/calrendar/schd/register", request)
+      .post("http://localhost:8080/calendar/schd/register", request)
       .then((response) => {
         console.log(response);
         if (response.data.status === "OK") {
@@ -75,7 +142,9 @@ const CalendarModal = ({ isOpen, onClose }) => {
       ariaHideApp={false}
       id="contentsModal"
     >
-      <h2 className="modal-title">{nowDate}</h2>
+      <h2 className="modal-title" id="thisDate">
+        {userThisDate ? userThisDate : thisDate}
+      </h2>
 
       {/* 제목 입력 */}
       <div className="form-group">
@@ -85,6 +154,8 @@ const CalendarModal = ({ isOpen, onClose }) => {
           id="title"
           placeholder="제목을 입력하세요"
           className="input-field"
+          value={userTitle}
+          onChange={inputChange}
         />
       </div>
 
@@ -95,6 +166,8 @@ const CalendarModal = ({ isOpen, onClose }) => {
           id="content"
           placeholder="내용을 입력하세요"
           className="textarea-field"
+          value={userContent}
+          onChange={inputChange}
         ></textarea>
       </div>
 
@@ -127,9 +200,16 @@ const CalendarModal = ({ isOpen, onClose }) => {
 
       {/* 모달 하단 버튼 */}
       <div className="modal-footer">
-        <button className="close-btn" onClick={register}>
-          등록
+        <button className="close-btn" onClick={userCalData ? modify : register}>
+          {userCalData ? "수정" : "등록"}
         </button>
+        {userCalData ? (
+          <button id="delete" className="close-btn" onClick={deleteCal}>
+            삭제
+          </button>
+        ) : (
+          ""
+        )}
         <button className="close-btn" onClick={onClose}>
           취소
         </button>
