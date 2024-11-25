@@ -25,6 +25,9 @@ export function filterNullCheckMsg(value) {
             case "name":
             returnValue = "이름을 입력해주세요.";
             break;
+            case "detailAddr" : 
+            returnValue = "상세주소를 입력해주세요."
+            break;
         default:
             returnValue = "";
             break;

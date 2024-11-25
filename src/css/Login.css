@@ -172,6 +172,7 @@
   margin-left: 20px;
   border-style: none;
   background-color: white;
+  cursor: pointer;
 }
 /* 구글 아이콘과 텍스트 색상 스타일 */
 .socialButtonG span {

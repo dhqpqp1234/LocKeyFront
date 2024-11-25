@@ -17,6 +17,8 @@
     font-size: 20px;
   }
   
+  /* headerTaps */
+
   .headerMenu{
     display: flex;
     gap: 110px;
@@ -32,11 +34,13 @@
     margin: 0 10px; /* 텍스트 간 간격*/  
   }
 
-  .headerTapDiv{
+  .headerTaps{
     display: flex;
     gap: 30px;
     font-size: 22px;
     font-weight: bold;
+    color: #fff;
+    text-decoration: none;
   }
   
 
@@ -75,6 +79,36 @@
   display: block;
   opacity: 1;
   transform: translateY(0);
+  right: -50px;
+}
+
+
+#personIcon {
+  transition: transform 0.3s ease;
+  width: 42.63px;
+  height: 23px;
+}
+
+#personIcon:hover {
+  transform: rotate(45deg);
+}
+.personIcon {
+  display: none;
+  position: absolute;
+  top: 50px; /* 원하는 위치에 맞게 조정 */
+  right: 0px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.personIcon.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  right: 120px;
 }
 
 /* 메뉴 항목 스타일 */
@@ -92,5 +126,12 @@
 }
 
 .logo{
+  cursor: pointer;
+}
+
+/* 가입자 아이콘 */
+#logInPerson{
+  width: 40px;
+  height: 40px;
   cursor: pointer;
 }

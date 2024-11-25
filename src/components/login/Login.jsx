@@ -144,6 +144,12 @@ const Login = () => {
       });
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      homeLoginClick();
+    }
+  };
+
   return (
     <div className="container">
       <div className="loginMain">
@@ -159,6 +165,7 @@ const Login = () => {
           id="pw"
           placeholder="비밀번호"
           type="password"
+          onKeyDown={handleKeyDown}
         />
         <button type="button" className="submitButton" onClick={homeLoginClick}>
           로그인

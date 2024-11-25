@@ -1,21 +1,47 @@
 import React from "react";
-import { useState } from "react";
-import { FaFacebook, FaGoogle } from "react-icons/fa";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { filterPhone } from "../../js/regex/regex";
 import { filterNullCheckMsg } from "../../js/msg/msg";
+import { getIconImages } from "../../js/icon/icon";
+import Swal from "sweetalert2";
+import DaumPostcode from "react-daum-postcode";
 import "../../css/Join.css"; // CSS 파일을 임포트
 import axios from "axios";
-import Swal from "sweetalert2";
 
 const SignUp = () => {
   const [inputState, setInputState] = useState("");
+  const [addressState, setAddressState] = useState("");
+  const [zoneCodeState, setZoneCodeState] = useState("");
   const [msgState, setMsgState] = useState(0);
   const [smsCheck, setSmsCheck] = useState(false);
   const [pwCheck, setPwCheck] = useState(false);
   const [emailState, setEmailStat] = useState(false);
+  const [daumPostState, setDaumPostState] = useState(false);
   const navigate = useNavigate();
 
+  //주소닫기
+  useEffect(() => {
+    const escKeyDaumClose = (e) => {
+      if (e.key === "Escape") {
+        setDaumPostState(false);
+      }
+    };
+    window.addEventListener("keydown", escKeyDaumClose);
+    return () => window.removeEventListener("keydown", escKeyDaumClose);
+  }, [setDaumPostState]);
+
+  //주소찾기
+  const daumPostClick = () => {
+    setDaumPostState(!daumPostState);
+  };
+  //주소선택
+  const daumPostComplate = (data) => {
+    const address = data.address;
+    const zoneCode = data.zonecode;
+    setAddressState(address);
+    setZoneCodeState(zoneCode);
+  };
   //자동하이픈
   const autoHyphen = (e) => {
     const phoneValue = e.target.value;
@@ -126,6 +152,8 @@ const SignUp = () => {
       memb_name: document.getElementById("name").value,
       ph: document.getElementById("ph2").value,
       address: document.getElementById("addr").value,
+      detail_addr: document.getElementById("detailAddr").value,
+      zone_code: zoneCodeState,
       join_type: "H",
       author: "NORM",
     };
@@ -305,34 +333,84 @@ const SignUp = () => {
             인증 확인
           </button>
         </div>
-        {/* <div className="inputContainer">
+        <div className="inputContainer">
           <input
             className="input"
             id="addr"
             placeholder="주소"
             type="text"
+            value={addressState}
             readOnly
           />
-          <button type="button" className="smsSubmitButton">
+          <button
+            type="button"
+            className="smsSubmitButton"
+            onClick={daumPostClick}
+          >
             주소검색
           </button>
-        </div> */}
-        <input
-          className="input"
-          placeholder="집 주소"
-          id="addr"
-          type="text"
-          required
-        />
+        </div>
+        <div>
+          <input
+            type="text"
+            className="input"
+            id="detailAddr"
+            placeholder="상세주소"
+          />
+        </div>
+        {daumPostState === true ? (
+          <DaumPostcode
+            style={{ width: "25%", height: "490px" }}
+            className="daumPostCode"
+            onComplete={daumPostComplate}
+          />
+        ) : (
+          ""
+        )}
         <button onClick={signUpOnClick} className="submitButton">
           가입하기
         </button>
-        <div className="socialLoginContainerJ">
-          <button className="socialButtonF">
-            <FaFacebook style={{ marginRight: "10px" }} /> Facebook으로 가입
+        <div className="socialLoginContainer">
+          <span className="line"></span>
+          <span id="snsLoginTxt">SNS계정으로 회원가입</span>
+          <span className="line"></span>
+        </div>
+        <div id="socialLoginButton">
+          <button
+            type="button"
+            className="socialButtons"
+            onClick={() => {
+              Swal.fire({
+                icon: "warning",
+                title: "미구현",
+              });
+            }}
+          >
+            <img src={getIconImages(5)} />
           </button>
-          <button className="socialButtonG">
-            <FaGoogle style={{ marginRight: "10px" }} /> Google로 가입
+          <button
+            type="button"
+            className="socialButtons"
+            onClick={() => {
+              Swal.fire({
+                icon: "warning",
+                title: "미구현",
+              });
+            }}
+          >
+            <img src={getIconImages(6)} />
+          </button>
+          <button
+            type="button"
+            className="socialButtons"
+            onClick={() => {
+              Swal.fire({
+                icon: "warning",
+                title: "미구현",
+              });
+            }}
+          >
+            <img src={getIconImages(7)} />
           </button>
         </div>
         <p className="signInPrompt">

@@ -20,6 +20,7 @@
   width: 100%;
   max-width: 450px;
   text-align: center;
+  z-index: 1;
 }
 
 /* 제목 스타일 */
@@ -61,7 +62,7 @@
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  background-color: #4caf50; /* 녹색 */
+  background-color: #dfb6f5; /* 녹색 */
   color: white;
   border: none;
   border-radius: 5px;
@@ -98,7 +99,8 @@
   padding: 12px 20px;
   font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #ff5f6d, #ffc3a0);
+  background: #dfb6f5;
+  /* background: linear-gradient(135deg, #ff5f6d, #ffc3a0); */
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -108,12 +110,14 @@
 }
 
 .submitButton:hover {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background-color: #dfb6f5;
+  /* background: linear-gradient(135deg, #ff416c, #ff4b2b); */
   transform: scale(1.05);
 }
 
 .submitButton:active {
-  background: linear-gradient(135deg, #ff4b2b, #ff5f6d);
+  background-color: #dfb6f5;
+  /* background: linear-gradient(135deg, #ff4b2b, #ff5f6d); */
   transform: scale(0.98);
 }
 
@@ -124,7 +128,8 @@
   padding: 12px 20px;
   font-size: 16px;
   color: white;
-  background: linear-gradient(135deg, #ff5f6d, #ffc3a0);
+  background-color: #dfb6f5;
+  /* background: linear-gradient(135deg, #ff5f6d, #ffc3a0); */
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -134,12 +139,14 @@
 }
 
 .smsSubmitButton:hover {
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  background-color: #dfb6f5;
+  /* background: linear-gradient(135deg, #ff416c, #ff4b2b); */
   transform: scale(1.05);
 }
 
 .smsSubmitButton:active {
-  background: linear-gradient(135deg, #ff4b2b, #ff5f6d);
+  background-color: #dfb6f5;
+  /* background: linear-gradient(135deg, #ff4b2b, #ff5f6d); */
   transform: scale(0.98);
 }
 
@@ -192,4 +199,18 @@
 
 .signInLink:hover {
   text-decoration: underline;
+}
+
+.daumPostCode {
+  position: fixed; /* 화면에 고정 */
+  top: 50%; /* 화면의 세로 가운데 */
+  left: 50%; /* 화면의 가로 가운데 */
+  transform: translate(-50%, -50%); /* 정확한 가운데 정렬 */
+  z-index: 1000; /* 폼보다 앞에 오도록 z-index 값 크게 설정 */
+  border: 2px solid #ccc;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 약간의 그림자 효과 */
+  padding: 20px;
+  width: 400px; /* 팝업의 너비를 설정 */
+  height: auto; /* 높이는 내용에 따라 자동 조절 */
 }

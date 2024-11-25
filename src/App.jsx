@@ -12,6 +12,7 @@ import MapStory from "./components/contents/MapStory";
 import DateCalendar from "./components/contents/DateCalendar";
 
 function App() {
+  const memb_no = sessionStorage.getItem("memb_no");
   return (
     <>
       <BrowserRouter>

@@ -3,28 +3,31 @@ import { getIconImages } from "../../../js/icon/icon";
 import Tap from "./Tap";
 import Button from "../button/Button";
 import { useNavigate } from "react-router-dom";
+import { IoPersonCircleOutline } from "react-icons/io5";
 import "../../../css/Header.css";
+import Swal from "sweetalert2";
 
 const Header = () => {
   // 메뉴 표시 여부 상태
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const [personIconState, setPersonIconState] = useState(false);
   const navigate = useNavigate();
+  const memb_no = sessionStorage.getItem("memb_no");
 
   const otherMenuOnClick = () => {
     // 메뉴 토글
     setIsMenuVisible(!isMenuVisible);
   };
 
-  const rogoClick = () => {
-    navigate("/");
-  };
-
   return (
     <header className="header">
       <div className="headerIcon">
         <img
-          onClick={rogoClick}
+          onClick={() => {
+            navigate("/");
+          }}
           className="logo"
+          id="logo"
           src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
           alt="Netflix"
         />
@@ -34,7 +37,33 @@ const Header = () => {
           <Tap className="headerTapDiv" tapNo={2} />
           <Tap className="headerTapDiv" tapNo={3} />
           <Tap className="headerTapDiv" tapNo={4} />
-          <Button btnNo={3} />
+          {memb_no !== null ? (
+            <IoPersonCircleOutline
+              id="logInPerson"
+              onClick={() => {
+                setPersonIconState(!personIconState);
+              }}
+            />
+          ) : (
+            <Button btnNo={3} />
+          )}
+          {/* 사람아이콘 */}
+          <div className={`personIcon ${personIconState ? "show" : ""}`}>
+            <div
+              className="menuItem"
+              onClick={() => {
+                sessionStorage.removeItem("memb_no");
+                setPersonIconState(false);
+                Swal.fire({
+                  icon: "success",
+                  title: "로그아웃 되었습니다.",
+                });
+                navigate("/");
+              }}
+            >
+              로그아웃
+            </div>
+          </div>
           <img
             id="mainOtherTap"
             onClick={otherMenuOnClick}
@@ -42,7 +71,6 @@ const Header = () => {
             src={getIconImages(0)}
             alt="더보기"
           />
-
           {/* 메뉴가 보일 때만 아래 항목들이 표시됨 */}
           <div className={`additionalMenu ${isMenuVisible ? "show" : ""}`}>
             <div className="menuItem">추가 메뉴 1</div>
