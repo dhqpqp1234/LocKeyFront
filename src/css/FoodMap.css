@@ -1,0 +1,93 @@
+/* 전체 DIV */
+#foodMapDiv {
+  background-color: #fff;
+  width: 100%; /* 화면 크기에 맞게 반응형 크기 조정 */
+  height: 100vh; /* 전체 화면 높이 */
+  position: relative;
+  display: flex;
+  flex-direction: column; /* 세로로 정렬 */
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 타이틀 스타일 */
+#titleDiv {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px; /* 타이틀 아래 여백 */
+}
+
+/* 전체 맵과 옆 콘텐츠를 감싸는 컨테이너 */
+#mapContainer {
+  display: flex;
+  justify-content: space-between; /* 맵과 사이드 콘텐츠를 좌우로 배치 */
+  align-items: stretch; /* 자식 요소의 높이를 동일하게 설정 */
+  width: 80%; /* 화면 너비의 80%로 설정 */
+  height: 70%; /* 화면 높이의 70%로 설정 */
+  gap: 20px; /* 맵과 사이드 콘텐츠 간 간격 */
+}
+
+/* 카카오맵 div */
+#kakaoMapDiv {
+  width: 65%; /* 카카오맵의 크기를 65%로 설정 */
+  height: 100%; /* 맵이 부모 div의 전체 높이를 차지하도록 */
+  border-radius: 10px; /* 테두리 반경을 둥글게 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 맵에 그림자 효과 추가 */
+  overflow: hidden; /* 맵 내부에 스크롤 생기지 않게 */
+}
+
+/* 카카오맵 옆에 놓을 콘텐츠 div */
+#sideContentDiv {
+  width: 30%; /* 30% 크기로 설정 */
+  height: 100%; /* 높이를 100%로 설정하여 맵과 동일한 높이를 갖도록 */
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* 사이드 콘텐츠에 스크롤을 추가하여 내용이 많을 경우 스크롤 가능 */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* 콘텐츠가 위에서부터 쌓이도록 */
+}
+
+/* 작은 화면 대응 (모바일 화면 등) */
+@media screen and (max-width: 768px) {
+  #foodMapDiv {
+    padding: 10px;
+  }
+
+  #mapContainer {
+    flex-direction: column; /* 모바일 화면에서 맵과 사이드 콘텐츠를 세로로 정렬 */
+    gap: 10px;
+    height: auto;
+    width: 100%; /* 모바일 화면에서는 100% 너비로 설정 */
+  }
+
+  #kakaoMapDiv {
+    width: 100%; /* 모바일에서 맵 크기 100%로 설정 */
+    height: 300px; /* 높이를 고정하여 모바일에서 보기 좋게 */
+  }
+
+  #sideContentDiv {
+    width: 100%; /* 사이드 콘텐츠도 100%로 설정 */
+    height: auto; /* 모바일에서 높이 자동 조정 */
+  }
+}
+
+/* 더 작은 화면 대응 (예: 매우 작은 화면) */
+@media screen and (max-width: 480px) {
+  #foodMapDiv {
+    padding: 5px; /* 더 작은 화면에서 여백 줄이기 */
+  }
+
+  #kakaoMapDiv {
+    height: 250px; /* 더 작은 화면에서 맵 크기 조정 */
+  }
+
+  #sideContentDiv {
+    padding: 10px; /* 작은 화면에서 여백 줄이기 */
+  }
+}

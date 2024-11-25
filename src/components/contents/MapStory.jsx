@@ -1,6 +1,7 @@
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import geoData from "../../assets/koreaData.json";
 import { useState, useRef } from "react";
+import "../../css/MapStory.css";
 import { geoPath, geoCentroid, geoMercator } from "d3-geo";
 
 const MapStory = () => {

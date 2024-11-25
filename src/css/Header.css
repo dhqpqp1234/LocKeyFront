@@ -1,50 +1,57 @@
-.header{
-    display: flex;
-    align-items: center;
-    padding: 20px 0px;
-    border-bottom: 1px solid rgb(226, 226, 226);
-    background-color: #dfb6f5;
+/* 기본 헤더 스타일 */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 50px; /* 좌우 여백을 넓혀줌 */
+  border-bottom: 1px solid rgb(226, 226, 226);
+  background-color: #dfb6f5;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000; /* 헤더가 페이지의 가장 위에 고정되도록 */
+  box-sizing: border-box; /* 패딩을 포함한 크기 계산 */
 }
 
+/* 헤더 아이콘 부분 */
 .headerIcon {
-    display: flex;
-    align-items: center;  /* 세로 정렬 (필요에 따라 수정) */
-    justify-content: space-between; /* 가로 정렬 (필요에 따라 수정) */
-    width: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
-    font-weight: bold;
-    font-size: 20px;
-  }
-  
-  /* headerTaps */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-weight: bold;
+  font-size: 20px;
+}
 
-  .headerMenu{
-    display: flex;
-    gap: 110px;
-    align-items: center;
-    color: #fff;
-  }
+/* 메뉴 */
+.headerMenu {
+  display: flex;
+  gap: 110px;
+  align-items: center;
+  color: #fff;
+}
 
-  .headerIcon img {
-    margin: 0 10px; /* 이미지 간 간격 */
-  }
-  
-  .headerIcon div {
-    margin: 0 10px; /* 텍스트 간 간격*/  
-  }
+/* 아이콘 간 간격 */
+.headerIcon img {
+  margin: 0 10px; /* 이미지 간 간격 */
+}
 
-  .headerTaps{
-    display: flex;
-    gap: 30px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #fff;
-    text-decoration: none;
-  }
-  
+.headerIcon div {
+  margin: 0 10px; /* 텍스트 간 간격 */
+}
 
-  /* 메뉴 전체 컨테이너 */
+.headerTaps {
+  display: flex;
+  gap: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* 메뉴 전체 컨테이너 */
 .headerMenu {
   position: relative;
 }
@@ -82,7 +89,7 @@
   right: -50px;
 }
 
-
+/* 아이콘 호버 효과 */
 #personIcon {
   transition: transform 0.3s ease;
   width: 42.63px;
@@ -92,10 +99,11 @@
 #personIcon:hover {
   transform: rotate(45deg);
 }
+
 .personIcon {
   display: none;
   position: absolute;
-  top: 50px; /* 원하는 위치에 맞게 조정 */
+  top: 50px;
   right: 0px;
   background-color: #fff;
   border-radius: 8px;
@@ -104,6 +112,7 @@
   transform: translateY(-20px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
 .personIcon.show {
   display: block;
   opacity: 1;
@@ -125,13 +134,98 @@
   background-color: #f0f0f0;
 }
 
-.logo{
+.logo {
   cursor: pointer;
+  height: 30px;
 }
 
 /* 가입자 아이콘 */
-#logInPerson{
+#logInPerson {
   width: 40px;
   height: 40px;
   cursor: pointer;
+}
+
+/* 작은 화면 (모바일 화면) 대응 */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px 20px; /* 작은 화면에서 여백을 줄임 */
+  }
+
+  .headerIcon {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 16px; /* 텍스트 크기 축소 */
+  }
+
+  .headerMenu {
+    gap: 40px; /* 메뉴 간격 축소 */
+  }
+
+  .headerTaps {
+    display: flex;
+  gap: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  white-space: nowrap;  /* 줄 바꿈을 방지 */
+  }
+
+  .headerIcon img {
+    margin: 0 5px; /* 아이콘 간격 축소 */
+  }
+
+  .headerIcon div {
+    margin: 0 5px; /* 텍스트 간 간격 축소 */
+  }
+
+  /* 더보기 버튼 크기 축소 */
+  #mainOtherTap {
+    width: 35px;
+    height: 20px;
+  }
+
+  /* 추가 메뉴 위치 조정 */
+  .additionalMenu {
+    top: 40px; /* 메뉴 위치 조정 */
+  }
+
+  /* 로그인 아이콘 크기 축소 */
+  #logInPerson {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* 아이콘 위치 및 크기 조정 */
+  #personIcon {
+    width: 35px;
+    height: 20px;
+  }
+
+  .personIcon {
+    top: 40px;
+    right: 20px;
+  }
+}
+
+/* 더 작은 화면에서 로고와 메뉴 간격 줄이기 */
+@media screen and (max-width: 480px) {
+  .headerIcon {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .headerMenu {
+    gap: 20px; /* 더 좁은 간격 */
+  }
+
+  .headerTaps {
+    font-size: 16px;
+    gap: 10px;
+  }
+
+  .headerIcon img {
+    margin: 0 3px;
+  }
 }

@@ -22,7 +22,8 @@ const Tap = ({ tapNo }) => {
         setTapNav("/calendar");
         break;
       case 2:
-        setTapState("tep2");
+        setTapState("FOODMAP");
+        setTapNav("/foodMap");
         break;
       case 3:
         setTapState("tep3");
