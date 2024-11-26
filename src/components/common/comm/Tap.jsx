@@ -40,8 +40,11 @@ const Tap = ({ tapNo }) => {
       Swal.fire({
         icon: "warning",
         title: "로그인을 해주세요.",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/login");
+        }
       });
-      navigate("/");
     }
   };
 

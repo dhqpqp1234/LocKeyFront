@@ -17,9 +17,10 @@ main {
   flex-direction: column; /* 세로 방향으로 배치 */
   align-items: center;    /* 가운데 정렬 */
   padding: 20px;          /* 여백 */
-  background-color: #dfb6f5; /* 배경색 */
+  /* background-color: #dfb6f5; */
+  background-color: black;
   font-size: 14px;        /* 폰트 크기 */
-  color: #fff;            /* 글자 색 */
+  color: #dfb6f5;            /* 글자 색 */
   width: 100%;            /* 화면 너비에 맞게 푸터 확장 */
   position: relative;     /* 위치를 상대적으로 설정 */
   margin-top: auto;       /* 푸터가 페이지 하단으로 이동하도록 */

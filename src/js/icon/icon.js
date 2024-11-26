@@ -1,5 +1,5 @@
 import menuOtherRogo from '../../assets/header_other.png'
-import mainRogo from '../../assets/main_rogo.png'
+import mainRogo from '../../assets/logo4.png'
 import mainImage from '../../assets/main.gif'
 import moonImage from '../../assets/moon.gif'
 import moveMoonImage from '../../assets/move_moon.gif'

@@ -3,24 +3,11 @@ import { useEffect } from "react";
 
 const FoodMap = () => {
   useEffect(() => {
-    // Kakao Maps API 스크립트 로드
     const script = document.createElement("script");
-    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${
-      import.meta.env.VITE_KAKAO_JAVASCRIPT_KEY
-    }&autoload=false`;
-    document.head.appendChild(script);
-
-    script.onload = () => {
-      // 카카오 맵 로드 후 실행
-      window.kakao.maps.load(() => {
-        const mapContainer = document.getElementById("kakaoMapDiv");
-        const mapOption = {
-          center: new window.kakao.maps.LatLng(37.5665, 126.978),
-          level: 3,
-        };
-        const map = new window.kakao.maps.Map(mapContainer, mapOption);
-      });
-    };
+    const kakaoJavaScriptKey = import.meta.env.VITE_KAKAO_JAVASCRIPT_KEY;
+    script.src = `https://dapi.kakao.com/v2/maps/sdk.js?appkey=${kakaoJavaScriptKey}&libraries=services,clusterer`;
+    script.async = true;
+    script.onload = () => {};
   }, []);
 
   return (

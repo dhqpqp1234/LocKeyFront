@@ -28,8 +28,8 @@ const Header = () => {
           }}
           className="logo"
           id="logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
-          alt="Netflix"
+          src={getIconImages(1)}
+          alt="locKey"
         />
         <div className="headerMenu">
           <Tap className="headerTapDiv" tapNo={0} />
