@@ -48,7 +48,7 @@ const Tap = ({ tapNo }) => {
   };
 
   return (
-    <Link className="headerTaps" to={tapNav} onClick={tapClick}>
+    <Link className="headerTaps" to={tapNav} >
       {tapState}
     </Link>
   );
