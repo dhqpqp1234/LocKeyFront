@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Header from "./components/common/comm/Header";
 import Footer from "./components/common/comm/Footer";
-import Main from "./components/main/Main";
+import Mains from "./components/mains/Mains.jsx";
 import Login from "./components/login/Login";
 import Join from "./components/login/Join";
 import FoodMap from "./components/contents/FoodMap";
@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" element={<Mains />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signUp" element={<Join />} />
           <Route path="/signUpComp" element={<SignUpComplete />} />
