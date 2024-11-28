@@ -118,7 +118,6 @@ const CalendarModal = ({ isOpen, onClose, thisDate, userCalData }) => {
     axios
       .post("http://localhost:8080/calendar/schd/register", request)
       .then((response) => {
-        console.log(response);
         if (response.data.status === "OK") {
           Swal.fire({
             icon: "success",

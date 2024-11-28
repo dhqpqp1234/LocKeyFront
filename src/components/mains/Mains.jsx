@@ -7,6 +7,7 @@ import MainBottom from "../../components/mains/MainBottom";
 const Main = () => {
   return (
     <main className="main">
+      <img />
       <MainTop />
       <MainMiddle />
       <MainBottom />

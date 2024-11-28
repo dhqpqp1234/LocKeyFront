@@ -100,12 +100,7 @@ const MapStory = () => {
 
               return (
                 <g key={geo.rsmKey}>
-                  <Geography
-                    geography={geo}
-                    fill="#fff"
-                    stroke="#000"
-                    onClick={() => console.log(geo)}
-                  />
+                  <Geography geography={geo} fill="#fff" stroke="#000" />
                   <text
                     // x={labelX}
                     // y={labelY}

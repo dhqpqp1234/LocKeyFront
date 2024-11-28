@@ -21,7 +21,7 @@ const Button = ({ btnNo }) => {
         setUrlState("https://play.google.com/store/games");
         break;
       case 3:
-        setbuttonState("로그인");
+        setbuttonState("LOGIN");
         buttonRef.current = 3;
         setUrlState("/login");
         break;

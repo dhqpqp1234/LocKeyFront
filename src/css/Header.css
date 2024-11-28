@@ -47,7 +47,7 @@
 .headerTaps {
   display: flex;
   gap: 30px;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
   color: #dfb6f5;
   text-decoration: none;
@@ -167,7 +167,7 @@
   .headerTaps {
     display: flex;
   gap: 30px;
-  font-size: 22px;
+  font-size: 16px;
   font-weight: bold;
   color: #dfb6f5;
   text-decoration: none;

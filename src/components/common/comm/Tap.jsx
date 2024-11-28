@@ -9,7 +9,6 @@ const Tap = ({ tapNo }) => {
   const navigate = useNavigate();
 
   const memb_no = sessionStorage.getItem("memb_no");
-  console.log(memb_no);
 
   useEffect(() => {
     switch (tapNo) {

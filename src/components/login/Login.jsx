@@ -153,7 +153,7 @@ const Login = () => {
   return (
     <div className="container">
       <div className="loginMain">
-        <h1 className="loginTitle">로그인</h1>
+        <h1 className="loginTitle">Login</h1>
         <input
           className="input"
           id="id"

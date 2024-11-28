@@ -19,7 +19,7 @@ main {
   padding: 20px;          /* 여백 */
   /* background-color: #dfb6f5; */
   background-color: black;
-  font-size: 14px;        /* 폰트 크기 */
+  font-size: 10px;        /* 폰트 크기 */
   color: #dfb6f5;            /* 글자 색 */
   width: 100%;            /* 화면 너비에 맞게 푸터 확장 */
   position: relative;     /* 위치를 상대적으로 설정 */
