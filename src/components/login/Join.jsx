@@ -261,7 +261,7 @@ const SignUp = () => {
   return (
     <div className="containerJ">
       <div className="signUpMain">
-        <h1 className="title">회원가입</h1>
+        <h1 className="title">Join us!</h1>
         <div className="inputContainer">
           <input
             className="input"

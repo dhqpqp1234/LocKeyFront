@@ -155,13 +155,13 @@ const Login = () => {
       <div className="loginMain">
         <h1 className="loginTitle">Login</h1>
         <input
-          className="input"
+          className="input radius"
           id="id"
           placeholder="이메일 주소"
           type="email"
         />
         <input
-          className="input"
+          className="input radius"
           id="pw"
           placeholder="비밀번호"
           type="password"

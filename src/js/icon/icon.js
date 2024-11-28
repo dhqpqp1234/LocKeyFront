@@ -1,4 +1,4 @@
-import menuOtherRogo from '../../assets/header_other.png'
+import menuOtherRogo from '../../assets/otherNew.png'
 import mainRogo from '../../assets/logo4.png'
 import mainImage from '../../assets/main.gif'
 import moonImage from '../../assets/moon.gif'
@@ -7,6 +7,7 @@ import kakaoImage from '../../assets/kakaoIcon.png'
 import naverImage from '../../assets/naverIcon.png'
 import googleImage from '../../assets/googleIcon.png'
 import appleImage from '../../assets/appleIcon.png'
+import peopleImage from "../../assets/myPageNew.png"
 export function getIconImages(num){
     switch(num){
         case 0 : return menuOtherRogo;   //헤더 메뉴 더보기
@@ -19,6 +20,7 @@ export function getIconImages(num){
         case 6 : return naverImage;
         case 7 : return googleImage;
         case 8 : return appleImage;
+        case 9 : return peopleImage;
         default : null;
     }    
 }

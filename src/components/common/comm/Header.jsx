@@ -38,8 +38,9 @@ const Header = () => {
           <Tap className="headerTapDiv" tapNo={3} />
           <Tap className="headerTapDiv" tapNo={4} />
           {memb_no !== null ? (
-            <IoPersonCircleOutline
-              id="logInPerson"
+            <img
+              id="headerPeople"
+              src={getIconImages(9)}
               onClick={() => {
                 setPersonIconState(!personIconState);
               }}

@@ -12,7 +12,7 @@
 
 /* 회원가입 박스 스타일 */
 .signUpMain {
-  background-color: white;
+  background-color: rgb(0, 0, 0);
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,19 +27,20 @@
 .title {
   font-size: 32px;
   font-weight: bold;
-  color: #333;
+  color: #e5b6f9;
   margin-bottom: 20px;
+  font-family: 'PirateOfTheSeaside', sans-serif;
 }
 
 /* 입력 필드 스타일 */
 .input {
   width: 100%;
-  padding: 12px 15px;
+  padding: 12px 20px;
   font-size: 16px;
   color: #333;
   background-color: #fafafa;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 50px;
   margin-bottom: 15px;
   box-sizing: border-box;
   transition: border-color 0.3s, box-shadow 0.3s;
@@ -61,13 +62,13 @@
 .verifyButton {
   width: 100%;
   padding: 12px;
-  font-size: 16px;
+  font-size: 14px;
   background-color: #dfb6f5; /* 녹색 */
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
-  margin-bottom: 15px;
+  margin-bottom: 26px;
 }
 
 .verifyButton:disabled {
@@ -84,7 +85,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
 }
 
 .inputContainer .input {
@@ -120,17 +120,17 @@
 /* 인증하기 버튼 */
 .smsSubmitButton {
   margin-top: -14px;
-  width: 100%;
+  width: 150px;
   padding: 12px 20px;
-  font-size: 16px;
+  font-size: 14px;
   color: white;
   background-color: #dfb6f5;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-weight: bold;
   text-align: center;
+  height: 45.5px;
 }
 
 .smsSubmitButton:hover {
@@ -181,12 +181,12 @@
 /* 로그인 유도 텍스트 */
 .signInPrompt {
   margin-top: 20px;
-  font-size: 14px;
-  color: #777;
+  font-size: 10px;
+  color: #e5b6f9;
 }
 
 .signInLink {
-  color: #0071eb;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -233,4 +233,9 @@
       font-size: 14px; /* 버튼 크기 줄이기 */
       padding: 10px; /* 버튼 여백 줄이기 */
   }
+}
+
+.input::placeholder{
+  font-style: normal;
+  font-size: 13px;
 }

@@ -231,3 +231,9 @@
     margin: 0 3px;
   }
 }
+
+/* 헤더 사진 */
+#headerPeople{
+  width: 30px;
+  height: 30px;
+}
