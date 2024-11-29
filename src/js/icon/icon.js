@@ -8,7 +8,7 @@ import naverImage from '../../assets/naverIcon.png'
 import googleImage from '../../assets/googleIcon.png'
 import appleImage from '../../assets/appleIcon.png'
 import peopleImage from "../../assets/myPageNew.png"
-import mainImageU from "../../assets/lockeyMainPage.jpg"
+import mainImageU from "../../assets/mainpagenewnew.jpg"
 export function getIconImages(num){
     switch(num){
         case 0 : return menuOtherRogo;   //헤더 메뉴 더보기

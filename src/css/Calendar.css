@@ -17,6 +17,7 @@
 /* 제목 볼드 빼기 */
 .fc .fc-toolbar-title {
     font-weight: normal;
+    font-family: 'PirateOfTheSeaside', sans-serif;
 }
 
 /* 요일별 배경 색상 */
@@ -58,7 +59,9 @@
 .fc .fc-toolbar-chunk .fc-button {
     background-color: transparent;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
+    border-radius: 20px;
+    font-family: initial;
 }
 
 /* 툴바 버튼 비활성화 스타일 */
@@ -122,9 +125,9 @@
 .fc-event {
     padding: 5px 10px;
     margin-bottom: 5px;
-    border-radius: 4px;
+    border-radius: 3px;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 /* 툴바 활성화 시 색상 */
@@ -153,7 +156,7 @@
 
     /* 요일 폰트 크기 줄이기 */
     .fc-theme-standard th {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     /* 날짜 Cell 크기 조정 */
