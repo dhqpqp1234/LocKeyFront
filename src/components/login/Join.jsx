@@ -60,6 +60,8 @@ const SignUp = () => {
       Swal.fire({
         icon: "error",
         title: "이메일을 입력해주세요.",
+        imageWidth: 400,
+        imageHeight: 200
       });
       return;
     }
@@ -330,7 +332,7 @@ const SignUp = () => {
             className="smsSubmitButton"
             onClick={smsNumberCheck}
           >
-            인증 확인
+            인증확인
           </button>
         </div>
         <div className="inputContainer">

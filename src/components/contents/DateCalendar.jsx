@@ -112,7 +112,7 @@ const DateCalendar = () => {
           center: "title",
           end: "dayGridMonth dayGridWeek",
         }}
-        locale={"ko"}
+       
         events={calendarData}
         eventClick={eventClick}
         dateClick={dayClick}

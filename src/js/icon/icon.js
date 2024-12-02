@@ -3,9 +3,9 @@ import mainRogo from '../../assets/logo4.png'
 import mainImage from '../../assets/main.gif'
 import moonImage from '../../assets/moon.gif'
 import moveMoonImage from '../../assets/move_moon.gif'
-import kakaoImage from '../../assets/kakaoIcon.png'
-import naverImage from '../../assets/naverIcon.png'
-import googleImage from '../../assets/googleIcon.png'
+import kakaoImage from '../../assets/icon_kakao.png'
+import naverImage from '../../assets/icon_naver.png'
+import googleImage from '../../assets/icon_google.png'
 import appleImage from '../../assets/appleIcon.png'
 import peopleImage from "../../assets/myPageNew.png"
 import mainImageU from "../../assets/mainpagenewnew.jpg"

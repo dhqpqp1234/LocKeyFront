@@ -3,16 +3,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f5f5f5; /* 밝은 회색 배경 */
+  background-color: #000; /* 밝은 회색 배경 */
   min-height: 100vh; /* 화면 크기만큼 최소한 100% 높이 설정 */
   padding: 20px; /* 화면 크기에 따라 패딩을 조금씩 추가 */
   box-sizing: border-box; /* 패딩 포함하여 크기 계산 */
-  margin-top: 80px; /* 헤더가 고정되어 있으면 여백을 추가하여 폼을 아래로 내리기 */
+  margin-top: 48px; /* 헤더가 고정되어 있으면 여백을 추가하여 폼을 아래로 내리기 */
 }
 
 /* 회원가입 박스 스타일 */
 .signUpMain {
-  background-color: rgb(0, 0, 0);
+  background-color: #000;
   padding: 40px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@
   font-size: 32px;
   font-weight: bold;
   color: #e5b6f9;
-  margin-bottom: 20px;
+  margin-bottom: 37px;
   font-family: 'PirateOfTheSeaside', sans-serif;
 }
 
@@ -63,12 +63,14 @@
   width: 100%;
   padding: 12px;
   font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: #dfb6f5; /* 녹색 */
   color: white;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   margin-bottom: 26px;
+  transition: all 0.3s ease;
 }
 
 .verifyButton:disabled {
@@ -76,8 +78,14 @@
   cursor: not-allowed;
 }
 
-.verifyButton:hover:not(:disabled) {
-  background-color: #45a049; /* hover 시 색상 변화 */
+.verifyButton:hover {
+  background-color: #dfb6f5;
+  transform: scale(1.05);
+}
+
+.verifyButton:active {
+  background-color: #dfb6f5;
+  transform: scale(0.98);
 }
 
 /* 인증번호 입력 박스 */
@@ -120,9 +128,10 @@
 /* 인증하기 버튼 */
 .smsSubmitButton {
   margin-top: -14px;
-  width: 150px;
+  width: 122px;
   padding: 12px 20px;
   font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: white;
   background-color: #dfb6f5;
   border: none;
@@ -181,7 +190,7 @@
 /* 로그인 유도 텍스트 */
 .signInPrompt {
   margin-top: 20px;
-  font-size: 10px;
+  font-size: 11px;
   color: #e5b6f9;
 }
 
