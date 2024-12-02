@@ -140,6 +140,7 @@
   display: none; /* 기본 input[type="file"] 숨김 */
 }
 
+/* 얌얌 */
 .file-label span {
   display: block;
   font-size: 14px;
