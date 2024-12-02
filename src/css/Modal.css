@@ -92,6 +92,7 @@
   width: 100%;
 }
 
+/* 얌얌 */
 .file-list {
   flex: 1; /* 파일명이 왼쪽에 위치하도록 설정 */
   padding-right: 20px; /* 버튼과의 간격을 줌 */
