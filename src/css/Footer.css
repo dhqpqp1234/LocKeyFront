@@ -39,7 +39,7 @@ main {
 /* 저작권 텍스트 */
 .footer-copyright p {
   margin: 0;
-  font-size: 12px; /* 저작권 텍스트는 더 작은 크기로 */
+  font-size: 10px; /* 저작권 텍스트는 더 작은 크기로 */
   text-align: center; /* 중앙 정렬 */
 }
 

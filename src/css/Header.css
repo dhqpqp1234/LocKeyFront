@@ -2,7 +2,7 @@
 .header {
   display: flex;
   align-items: center;
-  padding: 20px 50px; /* 좌우 여백을 넓혀줌 */
+  padding: 9px 50px; /* 좌우 여백을 넓혀줌 */
   border-bottom: 1px solid rgb(226, 226, 226);
   /* background-color: #dfb6f5; */
   background-color: black;
@@ -47,7 +47,8 @@
 .headerTaps {
   display: flex;
   gap: 30px;
-  font-size: 16px;
+  font-size: 13px;
+  font-family: initial;
   font-weight: bold;
   color: #dfb6f5;
   text-decoration: none;
@@ -61,7 +62,7 @@
 /* 더보기 버튼 */
 #mainOtherTap {
   transition: transform 0.3s ease;
-  width: 42.63px;
+  width: 31.63px;
   height: 23px;
 }
 
@@ -138,7 +139,7 @@
 
 .logo {
   cursor: pointer;
-  height: 30px;
+  height: 27px;
 }
 
 /* 가입자 아이콘 */
